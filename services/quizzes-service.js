@@ -1,21 +1,9 @@
-const quizzes = require("./quizes.json")
+const quizzesDao = require('../daos/quizzes-dao');
 
-const createQuiz = () => {}
-const findAllQuizzes = () => {
-    return quizzes
-}
-
-const findQuizById = (qid) => {
-    return quizzes.find((quiz) => {
-        return (quiz._id === qid)
-    })
-}
-
-const updateQuiz = () => {}
-const deleteQuiz = () => {}
+const findAllQuizzes = () => quizzesDao.findAllQuizzes();
+const findQuizById = (quizId) => quizzesDao.findQuizById(quizId).populate('questions').exec();
 
 module.exports = {
-    createQuiz,
-    findAllQuizzes, findQuizById,
-    updateQuiz, deleteQuiz
-}
+    findAllQuizzes,
+    findQuizById
+};
