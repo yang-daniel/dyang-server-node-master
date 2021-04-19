@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const mongoose = require('mongoose');
-const remoteUri = `mongodb+srv://${process.env.dbuser}:${process.env.dbpw}@whiteboard.udx05.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const remoteUri = `mongodb+srv://${process.env.dbuser}:${process.env.dbpw}@whiteboard.udx05.mongodb.net/whiteboard?retryWrites=true&w=majority`
 // const remoteUri = `mongodb+srv://:@whiteboard.udx05.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
 try {
