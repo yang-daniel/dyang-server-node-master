@@ -1,19 +1,13 @@
-const questionsModel = require('../models/questions/questions-model');
+
+const questionsModel = require('../models/questions/questions-model')
 const quizzesModel = require('../models/quizzes/quizzes-model')
 
-const findAllQuestions = () => questionsModel.find();
-const findQuestionById = (id) => questionsModel.findById(id);
-const findQuestionsForQuiz = (qid) => {
-  return questionsModel.find({'quizId': qid});
-  // needed change to work with remote db
+const findAllQuestions = () => questionsModel.find()
 
-  // return quizzesModel.findById(qid)
-  //   .populate({'path': 'questions'})
-  //   .then(quiz => quiz.questions);
+const findQuestionById = (qid) => questionsModel.findById(qid)
+
+const findQuestionsForQuiz = (qzid) => {
+  return questionsModel.find({'quizId': qzid})
 }
 
-module.exports = {
-  findAllQuestions,
-  findQuestionById,
-  findQuestionsForQuiz
-};
+module.exports = { findAllQuestions, findQuestionById, findQuestionsForQuiz }
