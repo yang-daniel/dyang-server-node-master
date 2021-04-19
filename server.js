@@ -33,13 +33,17 @@
 //
 // app.listen(process.env.PORT || 3001);
 
+
+
+
+
 const express = require('express')
 const app = express()
 
 app.listen(process.env.PORT || 3001)
 const mongoose = require('mongoose');
 mongoose.connect(
-    'mongodb+srv://${process.env.dbuser}:${process.env.dbpw}@whiteboard.udx05.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    `mongodb+srv://${process.env.dbuser}:${process.env.dbpw}@whiteboard.udx05.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
     {useNewUrlParser: true, useUnifiedTopology: true});
 
 var bodyParser = require('body-parser')
